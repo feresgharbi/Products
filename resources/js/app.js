@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
  import { BootstrapVue } from 'bootstrap-vue'
+ import axios from 'axios'
 
 require('./bootstrap');
 import ProductsGrid from 'vue-products-grid'
@@ -23,6 +24,8 @@ import Vue from 'vue'
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('product', require('./components/Products.vue').default);
+Vue.component('sidebar', require('./components/sidebar.vue').default);
+Vue.component('pagination', require('laravel-vue-pagination'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

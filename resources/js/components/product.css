@@ -1,0 +1,220 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+
+/* resets */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-auto-columns: 1fr 200px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-right: 20px;
+}
+
+.content {
+  grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 100px);
+
+}
+
+.sidebar {
+  grid-column: 2;
+  margin: 5px;
+  padding: 5px;
+}
+
+.grid > * {
+  border: 0px; /* demo only */
+}
+
+/* Product Grid */
+
+body {
+  background: whitesmoke;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 20px
+}
+
+ul.rig {
+  list-style: none;
+  font-size: 0px;
+  margin-left: 15%;
+  padding: auto;
+  margin-right: 10px;;
+  /* should match li left margin */
+}
+.product-card {
+  margin: 0.4rem 0;
+}
+
+.card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+ul.rig li {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 0 5% 5%;
+  background: #fff;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  font-size: 1rem;
+  vertical-align: top;
+  box-shadow: 0 0 0px #000000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+ul.rig li img {
+  max-width: 80%;
+  height: auto;
+  margin: 0 0 10px;
+}
+
+ul.rig li h3 {
+  margin: 0 0 10px;
+}
+
+ul.rig li p {
+  font-size: 1.0em;
+  line-height: 1.5em;
+  color: #000000;
+}
+
+
+/* class for 2 columns */
+
+ul.rig.columns-2 li {
+  width: 47.5%;
+  /* this value + 2.5 should = 50% */
+}
+
+
+/* class for 3 columns */
+
+ul.rig.columns-3 li {
+  width: 30.83%;
+  /* this value + 2.5 should = 33% */
+}
+
+
+/* class for 4 columns */
+
+ul.rig.columns-4 li {
+  width: 22.5%;
+  /* this value + 2.5 should = 25% */
+}
+
+@media (max-width: 680px) {
+  ul.grid-nav li {
+    display: inline-block;
+    margin: 0 0 5px;
+  }
+  ul.grid-nav li a {
+    display: inline-block;
+    margin: 0 0 5px;
+  }
+  ul.rig {
+    margin-left: 0;
+  }
+  ul.rig li {
+    width: 100% !important;
+    /* over-ride all li styles */
+    margin: 0 0 10px;
+  }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    color: #04AA6D;
+    align: center ;
+  }
+  a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    
+}
+.pagination li a:-webkit-any-link {
+  border-radius: 5px;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+  .pagination li {
+    
+    color: white;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  }
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #bfe482;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: #e3edf2;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }

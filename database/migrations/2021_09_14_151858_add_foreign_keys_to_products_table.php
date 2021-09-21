@@ -15,6 +15,7 @@ class AddForeignKeysToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->foreign('category_id', 'products_category_fk')->references('id')->on('categories')->onUpdate('NO ACTION')->onDelete('SET NULL');
+
         });
     }
 

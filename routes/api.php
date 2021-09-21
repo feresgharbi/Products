@@ -18,4 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('categories', 'Api\CategoriesController@index');
+Route::get('prices', 'Api\PriceController@index');
+Route::get('availables', 'Api\AvailableController@index');
 Route::get('products', 'Api\ProductsController@index');
+
